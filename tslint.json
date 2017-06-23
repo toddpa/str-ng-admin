@@ -20,7 +20,9 @@
     "no-unused-expression": true,
     "one-line": [true, "check-catch", "check-else", "check-open-brace", "check-whitespace"],
     "quotemark": [true, "single", "avoid-escape"],
-    "semicolon": true,
+    "semicolon": [
+      "always"
+    ],
     "typedef-whitespace": [
       true,
       {
