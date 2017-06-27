@@ -151,223 +151,264 @@
         "investors": {},
         "product": {
           "tapes": {
-            "route": "",
-            "view": {
-              "title": "Tape Processing",
-              "panel": {
-                "behaviour": {
-                  "description": "Details form of the upload file manager master details view"
-                },
-                "form": [
-                  {
-                    "field": "tape name",
-                    "type": "text"
-                  },
-                  {
-                    "field": "job name",
-                    "type": "text"
-                  },
-                  {
-                    "field": "description",
-                    "type": "text"
-                  },
-                  {
-                    "field": "version",
-                    "type": "text"
-                  },
-                  {
-                    "field": "factor set",
-                    "type": "list"
-                  },
-                  {
-                    "field": "cleaning rules",
-                    "type": "list"
-                  },
-                  {
-                    "panel": [
-                      {
-                        "button": "cancel",
-                        "stateChanges": {}
-                      },
-                      {
-                        "button": "audit",
-                        "stateChanges": {}
-                      },
-                      {
-                        "button": "create",
-                        "stateChanges": {}
-                      },
-                      {
-                        "button": "clone",
-                        "stateChanges": {}
-                      },
-                      {
-                        "button": "save",
-                        "stateChanges": {}
-                      }
-                    ]
-                  }
-                ]
-              },
-              "table": {
-                "behaviour": {
-                  "description": "The master file selection table",
-                  "properties": {
-                    "selection": "single"
-                  }
-                },
-                "columns": [
-                  {
-                    "heading": "Tape Name",
-                    "type": "text"
-                  },
-                  {
-                    "heading": "Job name",
-                    "type": "text"
-                  },
-                  {
-                    "heading": "run number",
-                    "type": "text - n.n.n"
-                  },
-                  {
-                    "heading": "actions",
-                    "type": {
-                      "panel": [
-                        {
-                          "button": "extract(ed)",
-                          "stateChanges": {}
-                        },
-                        {
-                          "button": "clean(ed)",
-                          "stateChanges": {}
-                        },
-                        {
-                          "button": "reconcile(d)",
-                          "stateChanges": {}
-                        },
-                        {
-                          "button": "reset",
-                          "stateChanges": {}
-                        }
-                      ]
-                    }
-                  }
-                ],
-                "row": {
-                  "action": "selected",
-                  "stateChanges": [
-                    "Set state: current tape doc"
-                  ]
-                }
-              }
-            }
-          },
-          "clensing": {
-            "route": "cleaning.rules",
-            "view": {
-              "title": "Clensing Rules",
-              "fields": [
+            "route": "tapes",
+            "panel": {
+              "control panel": [
                 {
-                  "name": "",
+                  "button": "create",
+                  "stateChanges": ["Set tape empty"],
+                  "route to": "tape.configure"
+                },
+                {
+                  "button": "clone",
+                  "stateChanges": ["Set tape copy of current"],
+                  "route to": "tape.configure"
+                }
+              ]
+            },
+            "table": {
+              "behaviour": {
+                "description": "The master file selection table",
+                "properties": {
+                  "selection": "single"
+                }
+              },
+              "columns": [
+                {
+                  "heading": "Tape Name",
                   "type": "text"
                 },
                 {
-                  "button": "cancel",
-                  "stateChanges": {}
+                  "heading": "Job name",
+                  "type": "text"
                 },
                 {
-                  "button": "save",
-                  "stateChanges": {}
-                }
-              ]
-            }
-          },
-          "mappings": {
-            "route": "mapping.rules",
-            "view": {
-              "title": "Mapping Rules",
-              "field_mappings": [
+                  "heading": "run number",
+                  "type": "text - n.n.n"
+                },
                 {
-                  "field": {
-                    "raw": "",
-                    "canonical": "",
-                    "conversions": [
-                      "text"
+                  "heading": "actions",
+                  "type": {
+                    "panel": [
+                      {
+                        "button": "configure",
+                        "route to": "tape.configure"
+                      },
+                      {
+                        "button": "run",
+                        "route to": "tape.configure"
+                      }
                     ]
                   }
                 }
               ],
-              "controlPanel": [
-                {
-                  "button": "cancel",
-                  "stateChanges": {}
-                },
-                {
-                  "button": "save",
-                  "stateChanges": {}
-                }
-              ]
-            }
-          },
-          "factors": {
-            "route": "reconciliation.factors",
-            "view": {
-              "title": "Factors",
-              "fields": [
-                {
-                  "name": "",
-                  "type": "text"
-                },
-                {
-                  "button": "cancel",
-                  "stateChanges": {}
-                },
-                {
-                  "button": "save",
-                  "stateChanges": {}
-                }
-              ]
-            }
-          },
-          "portfolios": {
-            "route": "portfolios",
-            "menu": [
+              "row": {
+                "action": "selected",
+                "stateChanges": [
+                  "Set state: current tape doc"
+                ]
+              }
+            },
+            "child view": [
               {
-                "builder": {
-                  "route": "portfolios.builder",
-                  "view": {
-                    "title": "Portfolio Builder",
-                    "panels": [
-                      {
-                        "name": "Filter Criteria",
-                        "filters": [
+                "route": "tape.configure",
+                "title": "Configure Tape",
+                "panel": {
+                  "behaviour": {
+                    "description": "Details form of the upload file manager master details view"
+                  },
+                  "form": [
+                    {
+                      "field": "tape name",
+                      "type": "text"
+                    },
+                    {
+                      "field": "job name",
+                      "type": "text"
+                    },
+                    {
+                      "field": "description",
+                      "type": "text"
+                    },
+                    {
+                      "field": "version",
+                      "type": "text"
+                    },
+                    {
+                      "field": "factor set",
+                      "type": "list"
+                    },
+                    {
+                      "field": "cleaning rules",
+                      "type": "list"
+                    },
+                    {
+                      "control panel": [
+                        {
+                          "button": "cancel",
+                          "stateChanges": {}
+                        },
+                        {
+                          "button": "save",
+                          "stateChanges": {}
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "clensing": {
+          "route": "cleaning.rules",
+          "view": {
+            "title": "Clensing Rules",
+            "fields": [
+              {
+                "name": "",
+                "type": "text"
+              },
+              {
+                "button": "cancel",
+                "stateChanges": {}
+              },
+              {
+                "button": "save",
+                "stateChanges": {}
+              }
+            ]
+          }
+        },
+        "mappings": {
+          "route": "mapping.rules",
+          "view": {
+            "title": "Mapping Rules",
+            "field_mappings": [
+              {
+                "field": {
+                  "raw": "",
+                  "canonical": "",
+                  "conversions": [
+                    "text"
+                  ]
+                }
+              }
+            ],
+            "controlPanel": [
+              {
+                "button": "cancel",
+                "stateChanges": {}
+              },
+              {
+                "button": "save",
+                "stateChanges": {}
+              }
+            ]
+          }
+        },
+        "factors": {
+          "route": "reconciliation.factors",
+          "view": {
+            "title": "Factors",
+            "fields": [
+              {
+                "name": "",
+                "type": "text"
+              },
+              {
+                "button": "cancel",
+                "stateChanges": {}
+              },
+              {
+                "button": "save",
+                "stateChanges": {}
+              }
+            ]
+          }
+        },
+        "portfolios": {
+          "route": "portfolios.list",
+          "view": {
+            "title": "Portfolios",
+            "table": {
+              "columns": [
+                {
+                  "heading": "",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "child views": [
+            {
+              "define": {
+                "route": "portfolio.builder",
+                "view": {
+                  "title": "Portfolio Builder",
+                  "panels": [
+                    {
+                      "name": "Filter Criteria",
+                      "table": {
+                        "columns": [
                           {
-                            "field": "",
-                            "predicate": ""
+                            "heading": "",
+                            "type": "text"
                           }
                         ]
                       },
-                      {
-                        "name": "Bucketing Criteria",
-                        "buckets":[
+                      "table data": {
+                        "filters": [
+                          {
+                            "field": "text",
+                            "predicate": "regex|expression"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "Bucketing Criteria",
+                      "table": {
+                        "columns": [
+                          {
+                            "heading": "",
+                            "type": "text"
+                          }
+                        ]
+                      },
+                      "table data": {
+                        "buckets": [
                           {
                             "field": "",
                             "aggreagtion": ""
                           }
                         ]
                       }
+                    }
+                  ]
+                }
+              },
+              "execute": {
+                "route": "portfolio.runner",
+                "view": {
+                  "title": "Portfolio Viewer",
+                  "table": {
+                    "columns": [
+                      {
+                        "heading": "",
+                        "type": "text"
+                      }
                     ]
-                  }
-                },
-                "runner": {
-                  "route": "portfolios.runner"
+                  },
+                  "table data": {}
                 }
               }
-            ]
-          }
+            }
+          ]
         }
       }
-    },
-    {}
-  ]
+    }
+  },
+  {}
+]
 }
