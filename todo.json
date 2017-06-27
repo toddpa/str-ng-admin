@@ -1,0 +1,373 @@
+{
+  "todos": [
+    {
+      "task": "implement application authentication and application configuration",
+      "url": "https://medium.com/@blacksonic86/authentication-in-angular-2-958052c64492",
+      "tags": [
+        "JWT"
+      ],
+      "priorty": "2",
+      "dependencies": []
+    },
+    {
+      "task": "create an admin app structure for the Structure Products group",
+      "menu": {
+        "issuers": {
+          "Title": "Issuers",
+          "route": "issuer.select",
+          "view": {
+            "form": {
+              "label": "Issuer Details",
+              "list": {
+                "data": "issuer names",
+                "selection": "single"
+              },
+              "button": {
+                "action": "clicked",
+                "stateChanges": [
+                  "Drop connect to the current issuer database",
+                  "Connect to selected issuer database",
+                  "Set state: Issuer",
+                  "Set state: Uploaded tapes",
+                  "Set state: UI enable menu: issuer->details",
+                  "Set state: UI enable menu: issuer->tapes"
+                ]
+              }
+            }
+          },
+          "menu": {
+            "uploads": {
+              "route": "tape.manager",
+              "view": {
+                "title": "Tape Uploads",
+                "panel": {
+                  "behaviour": {
+                    "description": "Details form of the upload file manager master details view"
+                  },
+                  "form": [
+                    {
+                      "field": "name",
+                      "type": "text"
+                    },
+                    {
+                      "field": "description",
+                      "type": "text"
+                    },
+                    {
+                      "field": "uploaded",
+                      "type": "date"
+                    },
+                    {
+                      "field": "filename",
+                      "type": "text",
+                      "button": "file upload dialog"
+                    },
+                    {
+                      "field": "version",
+                      "type": "text"
+                    },
+                    {
+                      "panel": [
+                        {
+                          "button": "cancel",
+                          "stateChanges": {}
+                        },
+                        {
+                          "button": "save",
+                          "stateChanges": {}
+                        },
+                        {
+                          "button": "new",
+                          "stateChanges": {}
+                        },
+                        {
+                          "button": "delete",
+                          "stateChanges": {}
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "table": {
+                  "behaviour": {
+                    "description": "The master file selection table",
+                    "properties": {
+                      "selection": "single"
+                    }
+                  },
+                  "columns": [
+                    {
+                      "heading": "Name",
+                      "type": "text"
+                    },
+                    {
+                      "heading": "description",
+                      "type": "text"
+                    },
+                    {
+                      "heading": "file fame",
+                      "type": "text"
+                    },
+                    {
+                      "heading": "uploaded",
+                      "type": "date"
+                    },
+                    {
+                      "heading": "version",
+                      "type": "text - n.n.n"
+                    }
+                  ],
+                  "row": {
+                    "action": "selected",
+                    "stateChanges": [
+                      "Set state: current tape doc"
+                    ]
+                  }
+                }
+              }
+            },
+            "details": {
+              "route": "issue.details.",
+              "view": {
+                "title": "Issuer details",
+                "fields": [
+                  {
+                    "name": "",
+                    "type": "text"
+                  },
+                  {
+                    "button": "cancel",
+                    "stateChanges": {}
+                  },
+                  {
+                    "button": "save",
+                    "stateChanges": {}
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "investors": {},
+        "product": {
+          "tapes": {
+            "route": "",
+            "view": {
+              "title": "Tape Processing",
+              "panel": {
+                "behaviour": {
+                  "description": "Details form of the upload file manager master details view"
+                },
+                "form": [
+                  {
+                    "field": "tape name",
+                    "type": "text"
+                  },
+                  {
+                    "field": "job name",
+                    "type": "text"
+                  },
+                  {
+                    "field": "description",
+                    "type": "text"
+                  },
+                  {
+                    "field": "version",
+                    "type": "text"
+                  },
+                  {
+                    "field": "factor set",
+                    "type": "list"
+                  },
+                  {
+                    "field": "cleaning rules",
+                    "type": "list"
+                  },
+                  {
+                    "panel": [
+                      {
+                        "button": "cancel",
+                        "stateChanges": {}
+                      },
+                      {
+                        "button": "audit",
+                        "stateChanges": {}
+                      },
+                      {
+                        "button": "create",
+                        "stateChanges": {}
+                      },
+                      {
+                        "button": "clone",
+                        "stateChanges": {}
+                      },
+                      {
+                        "button": "save",
+                        "stateChanges": {}
+                      }
+                    ]
+                  }
+                ]
+              },
+              "table": {
+                "behaviour": {
+                  "description": "The master file selection table",
+                  "properties": {
+                    "selection": "single"
+                  }
+                },
+                "columns": [
+                  {
+                    "heading": "Tape Name",
+                    "type": "text"
+                  },
+                  {
+                    "heading": "Job name",
+                    "type": "text"
+                  },
+                  {
+                    "heading": "run number",
+                    "type": "text - n.n.n"
+                  },
+                  {
+                    "heading": "actions",
+                    "type": {
+                      "panel": [
+                        {
+                          "button": "extract(ed)",
+                          "stateChanges": {}
+                        },
+                        {
+                          "button": "clean(ed)",
+                          "stateChanges": {}
+                        },
+                        {
+                          "button": "reconcile(d)",
+                          "stateChanges": {}
+                        },
+                        {
+                          "button": "reset",
+                          "stateChanges": {}
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "row": {
+                  "action": "selected",
+                  "stateChanges": [
+                    "Set state: current tape doc"
+                  ]
+                }
+              }
+            }
+          },
+          "clensing": {
+            "route": "cleaning.rules",
+            "view": {
+              "title": "Clensing Rules",
+              "fields": [
+                {
+                  "name": "",
+                  "type": "text"
+                },
+                {
+                  "button": "cancel",
+                  "stateChanges": {}
+                },
+                {
+                  "button": "save",
+                  "stateChanges": {}
+                }
+              ]
+            }
+          },
+          "mappings": {
+            "route": "mapping.rules",
+            "view": {
+              "title": "Mapping Rules",
+              "field_mappings": [
+                {
+                  "field": {
+                    "raw": "",
+                    "canonical": "",
+                    "conversions": [
+                      "text"
+                    ]
+                  }
+                }
+              ],
+              "controlPanel": [
+                {
+                  "button": "cancel",
+                  "stateChanges": {}
+                },
+                {
+                  "button": "save",
+                  "stateChanges": {}
+                }
+              ]
+            }
+          },
+          "factors": {
+            "route": "reconciliation.factors",
+            "view": {
+              "title": "Factors",
+              "fields": [
+                {
+                  "name": "",
+                  "type": "text"
+                },
+                {
+                  "button": "cancel",
+                  "stateChanges": {}
+                },
+                {
+                  "button": "save",
+                  "stateChanges": {}
+                }
+              ]
+            }
+          },
+          "portfolios": {
+            "route": "portfolios",
+            "menu": [
+              {
+                "builder": {
+                  "route": "portfolios.builder",
+                  "view": {
+                    "title": "Portfolio Builder",
+                    "panels": [
+                      {
+                        "name": "Filter Criteria",
+                        "filters": [
+                          {
+                            "field": "",
+                            "predicate": ""
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Bucketing Criteria",
+                        "buckets":[
+                          {
+                            "field": "",
+                            "aggreagtion": ""
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "runner": {
+                  "route": "portfolios.runner"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {}
+  ]
+}
