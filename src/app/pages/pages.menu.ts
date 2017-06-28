@@ -3,6 +3,37 @@ export const PAGES_MENU = [
     path: 'pages',
     children: [
       {
+        path: 'thirdparty',
+        data: { // custom menu declaration
+          menu: {
+            title: 'general.menu.srt_pages', // menu title
+            icon: 'ion-edit', // menu icon
+            // pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        },
+        children: [
+          {
+            path: 'kendo',  // path for our page
+            data: {
+              menu: {
+                title: 'general.menu.kendo_grid'
+              }
+            }
+          },
+          {
+            path: 'ag',  // path for our page
+            data: {
+              menu: {
+                title: 'general.menu.ag_grid'
+              }
+            }
+          }
+        ]
+      },
+      {
         path: 'dashboard',
         data: {
           menu: {
@@ -208,14 +239,14 @@ export const PAGES_MENU = [
               }
             }
           },
-           {
-             path: 'hottables',
-             data: {
-               menu: {
-                 title: 'Hot Tables',
-               }
-             }
-           }
+          {
+            path: 'hottables',
+            data: {
+              menu: {
+                title: 'Hot Tables',
+              }
+            }
+          }
         ]
       },
       {
