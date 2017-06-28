@@ -18,7 +18,10 @@
       "option1": "Option 1"
     },
     "menu": {
-      "dashboard": "Dashboard",
+      "srt_pages" : "SRT Pages",
+      "kendo_grid" : "Kendo Grid",
+      "ag_grid" : "AG Grid",
+      "dashboard": "Dashboard!",
       "editors": "Editors",
       "ck_editor": "CKEditor",
       "components": "Components",
