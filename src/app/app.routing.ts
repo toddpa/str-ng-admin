@@ -2,6 +2,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 
 export const routes: Routes = [
+  // {
+  //   path: '', loadChildren: 'app/pages/login/login.module#LoginModule'
+  // },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages/dashboard' }
 ];
