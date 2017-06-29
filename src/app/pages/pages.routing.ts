@@ -27,7 +27,9 @@ export const routes: Routes = [
       { path: 'forms', loadChildren: './forms/forms.module#FormsModule' },
       { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
       { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },
-      { path: 'thirdparty', loadChildren: './thirdparty/thirdparty.module#ThirdpartyModule' }
+      { path: 'thirdparty', loadChildren: './thirdparty/thirdparty.module#ThirdpartyModule' },
+      { path: 'thirdparty/srt/issuer-details', loadChildren: './issuers/issuers.module#IssuersModule' },
+      { path: 'thirdparty/srt/issuer-uploads', loadChildren: './issuers/issuers.module#IssuersModule' }
     ]
   }
 ];
