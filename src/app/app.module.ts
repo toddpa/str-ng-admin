@@ -16,6 +16,7 @@ import { AppState, InternalStateType } from './app.service';
 import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
+import { GridModule } from '@progress/kendo-angular-grid';
 
 
 // Application wide providers
@@ -47,6 +48,7 @@ export type StoreType = {
     NgaModule.forRoot(),
     NgbModule.forRoot(),
     PagesModule,
+    GridModule,
     routing
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
