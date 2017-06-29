@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 
 import { BaMenuService } from '../theme';
-import { PAGES_MENU } from './pages.menu';
+import { PAGES_SMALL_MENU } from './pages.small.menu';
 
 @Component({
   selector: 'pages',
@@ -38,6 +38,6 @@ export class Pages {
   }
 
   ngOnInit() {
-    this._menuService.updateMenuByRoutes(<Routes>PAGES_MENU);
+    this._menuService.updateMenuByRoutes(<Routes>PAGES_SMALL_MENU);
   }
 }
