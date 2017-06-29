@@ -28,8 +28,8 @@ export const routes: Routes = [
       { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
       { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },
       { path: 'thirdparty', loadChildren: './thirdparty/thirdparty.module#ThirdpartyModule' },
-      { path: 'thirdparty/srt/issuer-details', loadChildren: './issuers/issuers.module#IssuersModule' },
-      { path: 'thirdparty/srt/issuer-uploads', loadChildren: './issuers/issuers.module#IssuersModule' }
+      { path: 'srt/issuer-details', loadChildren: './issuers/details/details.module#IssuersDetailsModule' },
+      { path: 'srt/issuer-uploads', loadChildren: './issuers/uploads/uploads.module#IssuersUploadsModule' }
     ]
   }
 ];
