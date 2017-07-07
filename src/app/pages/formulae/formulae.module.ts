@@ -5,6 +5,8 @@ import { routing } from './formulae.routing';
 
 import { FormulaeComponent } from './formulae.component';
 import { SupervisoryComponent } from './supervisory/supervisory.component';
+import { SupervisoryFormComponent } from './supervisory/form/supervisory.form.component';
+import { TableComponent } from './supervisory/table/table.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { SupervisoryComponent } from './supervisory/supervisory.component';
   ],
   declarations: [
     FormulaeComponent,
-    SupervisoryComponent
+    SupervisoryComponent,
+    SupervisoryFormComponent,
+    TableComponent
   ]
 })
 export class FormulaeModule { }
