@@ -13,9 +13,6 @@ import { InvestorsComponent } from './investors/investors.component';
 import { ProductComponent } from './product/product.component';
 import { ReconciliationsComponent } from './product/reconciliations/reconciliations.component';
 import { PortfoliosComponent } from './product/portfolios/portfolios.component';
-import { ClensingComponent } from './product/clensing/clensing.component';
-import { FactorsComponent } from './product/factors/factors.component';
-
 
 @NgModule({
   imports: [
@@ -30,9 +27,7 @@ import { FactorsComponent } from './product/factors/factors.component';
     InvestorsComponent,
     ProductComponent,
     ReconciliationsComponent,
-    PortfoliosComponent,
-    ClensingComponent,
-    FactorsComponent
+    PortfoliosComponent
   ],
   providers: [
     SRTDataService,

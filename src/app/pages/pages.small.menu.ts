@@ -43,11 +43,38 @@ export const PAGES_SMALL_MENU = [
         ]
       },
       {
+        path: 'formulae',
+        data: {
+          menu: {
+            title: 'Formulae',
+            icon: 'ion-compose' // menu icon
+          }
+        },
+        children: [
+          {
+            path: 'supervisory',  // path for our page
+            data: {
+              menu: {
+                title: 'general.menu.formulae.supervisory'
+              }
+            }
+          },
+          {
+            path: 'cap_req_sme',  // path for our page
+            data: {
+              menu: {
+                title: 'general.menu.formulae.cap_req_sme'
+              }
+            }
+          }
+        ]
+      },
+      {
         path: 'srt',
         data: {
           menu: {
             title: 'SRT',
-            icon: 'ion-edit', // menu icon
+            icon: 'ion-grid',
             selected: false,
             expanded: false,
             order: 0
@@ -71,7 +98,7 @@ export const PAGES_SMALL_MENU = [
             }
           },
           {
-            path: 'factors',
+            path: 'issuer-factors',
             data: {
               menu: {
                 title: 'general.menu.srt.factors'

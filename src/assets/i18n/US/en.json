@@ -18,7 +18,22 @@
       "option1": "Option 1"
     },
     "menu": {
-      "srt_pages" : "SRT Pages",
+      "srt" : {
+        "issuer-uploads": "Transactions",
+        "issuer-details": "Issuer details",
+        "factors": "Issuer factors",
+        "conversion": "Conversion rules",
+        "processing": "Tape processing",
+        "portfolios": "Portfolios",
+        "investors": "Investors"
+      },
+      "formulae": {
+        "supervisory": "Supervisory",
+        "cap_req_sme": "Capital Requirements SME"
+      },
+      "srt_pages" : "Prototypes",
+      "thirdparty" : "Thirdparty Components",
+      "grids" : "GRIDS",
       "kendo_grid" : "Kendo Grid",
       "ag_grid" : "AG Grid",
       "dashboard": "Dashboard!",

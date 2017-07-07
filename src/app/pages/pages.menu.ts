@@ -14,24 +14,97 @@ export const PAGES_MENU = [
             order: 0
           }
         },
-        children: [
-          {
-            path: 'kendo',  // path for our page
-            data: {
-              menu: {
-                title: 'general.menu.kendo_grid'
-              }
+        children: [{
+          path: 'grid',
+          data: {
+            menu: {
+              title: 'Grids'
             }
           },
-          {
-            path: 'ag',  // path for our page
-            data: {
-              menu: {
-                title: 'general.menu.ag_grid'
+          children: [
+            {
+              path: 'kendo',  // path for our page
+              data: {
+                menu: {
+                  title: 'general.menu.kendo_grid'
+                }
+              }
+            },
+            {
+              path: 'ag',  // path for our page
+              data: {
+                menu: {
+                  title: 'general.menu.ag_grid'
+                }
               }
             }
-          }
-        ]
+          ]
+        },
+        {
+          path: 'srt',
+          data: {
+            menu: {
+              title: 'SRT'
+            }
+          },
+          children: [
+            {
+              path: 'issuer-details',
+              data: {
+                menu: {
+                  title: 'general.menu.srt.issuer-details'
+                }
+              }
+            },
+            {
+              path: 'issuer-uploads',
+              data: {
+                menu: {
+                  title: 'general.menu.srt.issuer-uploads'
+                }
+              }
+            },
+            {
+              path: 'factors',
+              data: {
+                menu: {
+                  title: 'general.menu.srt.factors'
+                }
+              }
+            },
+            {
+              path: 'conversion',
+              data: {
+                menu: {
+                  title: 'general.menu.srt.conversion'
+                }
+              }
+            },
+            {
+              path: 'processing',
+              data: {
+                menu: {
+                  title: 'general.menu.srt.processing'
+                }
+              }
+            },
+            {
+              path: 'portfolios',
+              data: {
+                menu: {
+                  title: 'general.menu.srt.portfolios'
+                }
+              }
+            },
+            {
+              path: 'investors',  // path for our page
+              data: {
+                menu: {
+                  title: 'general.menu.srt.investors'
+                }
+              }
+            }          ]
+        }]
       },
       {
         path: 'dashboard',

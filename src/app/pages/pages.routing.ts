@@ -29,7 +29,10 @@ export const routes: Routes = [
       { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },
       { path: 'thirdparty', loadChildren: './thirdparty/thirdparty.module#ThirdpartyModule' },
       { path: 'srt/issuer-details', loadChildren: './issuers/details/details.module#IssuersDetailsModule' },
-      { path: 'srt/issuer-uploads', loadChildren: './issuers/uploads/uploads.module#IssuersUploadsModule' }
+      { path: 'srt/issuer-uploads', loadChildren: './issuers/uploads/uploads.module#IssuersUploadsModule' },
+      { path: 'srt/issuer-factors', loadChildren: './issuers/factors/factors.module#FactorsModule' },
+      { path: 'srt/conversion', loadChildren: './product/clensing/clensing.module#ClensingModule' },
+      { path: 'formulae', loadChildren: './formulae/formulae.module#FormulaeModule' }
     ]
   }
 ];

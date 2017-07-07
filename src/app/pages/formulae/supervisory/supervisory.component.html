@@ -1,0 +1,57 @@
+<h2>Supervisory Formula Input Parameters</h2>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input type="number" class="form-control" id="sf_K" placeholder="K" name="sf_K" ngModel>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input type="number" class="form-control" id="sf_L" placeholder="L" name="sf_L" ngModel>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input type="number" class="form-control" id="sf_detach" placeholder="detach" name="sf_detach" ngModel>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input type="number" class="form-control" id="sf_N" placeholder="N" name="sf_N" ngModel>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input type="number" class="form-control" id="sf_lgd" placeholder="LGD" name="sf_lgd" ngModel>
+      </div>
+    </div>
+  </div>
+  <!--
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input type="number" class="form-control" id="sf_tau" placeholder="tau" name="sf_tau" ngModel>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input type="number" class="form-control" id="sf_omega" placeholder="omega" name="sf_omega" ngModel>
+      </div>
+    </div>
+  </div>
+  -->
+  <button type="submit" class="btn btn-primary">Calculate</button>
+  <hr/>
+  <h2>Risk Weight: {{capReq | percent: '1.2-5'}}</h2>
+</form>

@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+    <ba-card title="Uploaded file" baCardClass="with-scroll">
+      <kendo-grid [data]="gridData" [height]="300">
+        <kendo-grid-column field="filename" title="File Name" width="100">
+        </kendo-grid-column>
+        <kendo-grid-column field="source" title="Source" width="100">
+        </kendo-grid-column>
+        <kendo-grid-column field="uploaded" title="Uploaded on" width="80">
+        </kendo-grid-column>
+        <kendo-grid-column field="status" title="Status" width="80">
+        </kendo-grid-column>
+      </kendo-grid>
+    </ba-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <ba-card title="File Uploader" baCardClass="with-scroll">
+      <ba-file-uploader [fileUploaderOptions]="fileUploaderOptions"></ba-file-uploader>
+    </ba-card>
+  </div>
+</div>
