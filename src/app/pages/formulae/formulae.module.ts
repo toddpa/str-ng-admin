@@ -7,6 +7,7 @@ import { FormulaeComponent } from './formulae.component';
 import { SupervisoryComponent } from './supervisory/supervisory.component';
 import { SupervisoryFormComponent } from './supervisory/form/supervisory.form.component';
 import { TableComponent } from './supervisory/table/table.component';
+import { FormulaService } from './formulae.service';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { TableComponent } from './supervisory/table/table.component';
     SupervisoryComponent,
     SupervisoryFormComponent,
     TableComponent
-  ]
+  ],
+  providers: [FormulaService]
 })
 export class FormulaeModule { }

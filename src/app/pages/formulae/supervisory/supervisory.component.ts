@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CapReqCalculator, Supervisory } from '@toddpa/shared-module';
+import { CapReq, Supervisory } from '@toddpa/shared-module';
 
 @Component({
   selector: 'supervisory-formula',

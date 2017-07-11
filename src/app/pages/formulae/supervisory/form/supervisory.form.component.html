@@ -2,7 +2,7 @@
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
   <div class="row">
     <div class="col-sm-1">
-        <label for="">K</label>
+      <label for="">K</label>
     </div>
     <div class="col-sm-3">
       <div class="form-group">
@@ -12,7 +12,7 @@
   </div>
   <div class="row">
     <div class="col-sm-1">
-        <label for="">L</label>
+      <label for="">L</label>
     </div>
     <div class="col-sm-3">
       <div class="form-group">
@@ -22,7 +22,7 @@
   </div>
   <div class="row">
     <div class="col-sm-1">
-        <label for="">Detach</label>
+      <label for="">Detach</label>
     </div>
     <div class="col-sm-3">
       <div class="form-group">
@@ -32,7 +32,7 @@
   </div>
   <div class="row">
     <div class="col-sm-1">
-        <label for="">N</label>
+      <label for="">N</label>
     </div>
     <div class="col-sm-3">
       <div class="form-group">
@@ -42,7 +42,7 @@
   </div>
   <div class="row">
     <div class="col-sm-1">
-        <label for="">LGD</label>
+      <label for="">LGD</label>
     </div>
     <div class="col-sm-3">
       <div class="form-group">
@@ -50,23 +50,30 @@
       </div>
     </div>
   </div>
-  <!--
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-3">
       <div class="form-group">
-        <input type="number" class="form-control" id="sf_tau" placeholder="tau" name="sf_tau" ngModel>
+        <button type="submit" class="btn btn-primary">Calculate</button>
+        <button type="button" class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
+      <hr/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-4">
+      <h2>Risk Weight: {{capReq | percent: '1.2-5'}}</h2>
       <div class="form-group">
-        <input type="number" class="form-control" id="sf_omega" placeholder="omega" name="sf_omega" ngModel>
+        <button type="button" class="btn btn-primary" type="button" (click)="onSave()">Save</button>
       </div>
     </div>
   </div>
-  -->
-  <button type="submit" class="btn btn-primary">Calculate</button>
   <hr/>
-  <h2>Risk Weight: {{capReq | percent: '1.2-5'}}</h2>
 </form>

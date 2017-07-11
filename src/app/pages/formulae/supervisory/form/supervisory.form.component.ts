@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, Output, ViewChild } from '@angular/core';
 import { DecimalPipe, PercentPipe } from '@angular/common';
+import { Response } from '@angular/http';
 import { NgForm } from '@angular/forms';
-import { CapReqCalculator, Supervisory } from '@toddpa/shared-module';
+import { CapReq, Supervisory, SupervisoryArgs } from '@toddpa/shared-module';
+import { FormulaService } from '../../formulae.service';
 
 @Component({
   selector: 'supervisory-form',
@@ -11,12 +13,13 @@ export class SupervisoryFormComponent implements OnInit {
   @ViewChild('f') form: NgForm;
   @Output('capReq') capReq: number;
 
-  constructor() { }
+  constructor(private formulaService: FormulaService) { }
 
   ngOnInit() {
   }
 
   onSubmit(form: NgForm) {
+    // TODO: Need to implement validation on the formula fields
     const supervisory = new Supervisory()
     const K: number = form.value.sf_K / 100;
     const L: number = form.value.sf_L / 100;
@@ -25,7 +28,33 @@ export class SupervisoryFormComponent implements OnInit {
     const lgd: number = form.value.sf_lgd / 100;
     const tau: number = 1000; // form.value.sf_tau;
     const omega: number = 20; // form.value.sf_omega;
-    this.capReq = supervisory.calc(K, L, detach, N, lgd, tau, omega);
-    console.log(`Risk Weight  ${this.capReq}`);
+
+    const args: SupervisoryArgs = {
+      formula: 'supervisory',
+      'K': K,
+      'L': L,
+      'detach': detach,
+      'N': N,
+      'LGD': lgd
+    };
+
+    this.formulaService.execute('supervisory', args).subscribe(
+      (response: Response) => {
+        const obj: any = response;
+        if (!Number.isNaN(obj.rw)) {
+          this.capReq = obj.rw;
+          console.log(`Risk Weight  ${this.capReq}`);
+        } else {
+          this.capReq = -1;
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  onClear() {
+    this.form.resetForm();
   }
 }
