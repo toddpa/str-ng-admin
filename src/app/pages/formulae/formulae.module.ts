@@ -8,13 +8,15 @@ import { SupervisoryComponent } from './supervisory/supervisory.component';
 import { SupervisoryFormComponent } from './supervisory/form/supervisory.form.component';
 import { TableComponent } from './supervisory/table/table.component';
 import { FormulaService } from './formulae.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    routing
+    routing,
+    NgbModule.forRoot()
   ],
   declarations: [
     FormulaeComponent,

@@ -58,14 +58,6 @@ export const PAGES_SMALL_MENU = [
                 title: 'general.menu.formulae.supervisory'
               }
             }
-          },
-          {
-            path: 'cap_req_sme',  // path for our page
-            data: {
-              menu: {
-                title: 'general.menu.formulae.cap_req_sme'
-              }
-            }
           }
         ]
       },
