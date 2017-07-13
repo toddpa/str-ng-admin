@@ -29,6 +29,10 @@ export class FormulaService {
     this.formula = formula;
   }
 
+  getFormula() {
+    return this.formula;
+  }
+
   execute(formula: string, parameters: Object) {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     return this.http.post(`http://localhost:3000/execute/${formula}`,
